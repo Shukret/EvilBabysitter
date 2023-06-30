@@ -30,8 +30,6 @@
       var loadingBar = document.querySelector("#unity-loading-bar");
       var progressBarFull = document.querySelector("#unity-progress-bar-full");
       var progressBarEmpty = document.querySelector("#unity-progress-bar-empty");
-      var progressBarFullMobile = document.querySelector("#unity-progress-bar-full-mobile");
-      var progressBarEmptyMobile = document.querySelector("#unity-progress-bar-empty-mobile");
       //var fullscreenButton = document.querySelector("#unity-fullscreen-button");
       var warningBanner = document.querySelector("#unity-warning");
 
@@ -108,12 +106,10 @@
               if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) 
               {
                   progressBarEmpty.style.display = "none";
-                  progressBarEmptyMobile.style.display = "block";
               }
               else
               {
                   progressBarEmpty.style.display = "block";
-                  progressBarEmptyMobile.style.display = "none";
               }
         createUnityInstance(canvas, config, (progress) => {
                           if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) 
