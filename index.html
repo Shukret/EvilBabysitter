@@ -103,23 +103,8 @@
       script.src = loaderUrl;
 
       script.onload = () => {
-              if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) 
-              {
-                  progressBarEmpty.style.display = "none";
-              }
-              else
-              {
-                  progressBarEmpty.style.display = "block";
-              }
         createUnityInstance(canvas, config, (progress) => {
-                          if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) 
-                          {
-                              progressBarFullMobile.style.width = 100 * progress + "%";
-                          }
-                          else
-                          {
                             progressBarFull.style.width = 100 * progress + "%";
-                          }
                       }).then((unityInstance) => {
                             myGameInstance = unityInstance;
                             vkBridge.send("VKWebAppInit", {});
